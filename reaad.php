@@ -1,13 +1,16 @@
 <?php
-$direccion="localhost";
-$usuario="root";
-$contraseña="";
-$nombreBase="TaskFlow";
+    $servidor="localhost";
+    $usuario="root";
+    $contraseña="";
+    $nombreBD="TaskFlow";
 
-$conexion= new mysqli($direccion,$usuario,$contraseña,$nombreBase);
-if($conexion->error){
-echo "Hubo un error al conectar a la base de datos";
-}
+    $conn= new mysqli($servidor,$usuario,$contraseña,$nombreBD);
+    if($conn -> connect_error){
+        echo "no te conectaste ";
+    }
+    else{
+        echo "si te conectaste ". "<br>";
+    }
 $sql="SELECT * FROM personas";
 $resultado = $conexion->query($sql);
 if ($resultado->num_rows>0){
