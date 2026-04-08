@@ -26,13 +26,15 @@
     </style>
     <center>
     <div>
-    <form method="post">
+    <form method="post" action="create.php">
+        <label for="">codigo</label>
+        <input type="number" name="id">
         <label>Nombre</label><br>
-        <input type="text"><br>
+        <input type="text" name="nombre"><br>
         <label>Descripcion</label><br>
-        <input type="text"><br>
+        <input type="text" name="descripcion"><br>
         <label>Estilo</label><br>
-        <input type="text"><br><br>
+        <input type="text" name="estado"><br><br>
         <input id="submit" type="submit" value="Enviar"><br><br>
         <input id="reset" type="reset" name="borrar" value="Borrar"><br><br>
     </form>
