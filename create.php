@@ -11,12 +11,11 @@
     else{
         echo "si te conectaste ". "<br>";
     }
-$id=$_GET['id'];
-$sql="SELECT * FROM personas WHERE id='$id'";
-$resultado = $conexion->query($sql);
-if ($resultado->num_rows>0){
-while($fila=$resultado->fetch_assoc()){
-echo $fila['id']."<br>".$fila['nombre']."<br>".$fila['descripcion']."<br>".$fila['estado'];
-}
-}
-?>
+
+    $id = $_POST['id' ];
+    $nombre = $_POST['nombre' ];
+    $descripcion = $_POST['descripcion'];
+    $estado = $_POST['estado' ];
+    $sql = "INSERT INTO produc (id, nombre, descripcion, estado) VALUES ('$id', '$nombre','$descripcion', '$estado')";
+
+    ?>
