@@ -10,7 +10,7 @@ echo "Hubo un error al conectar a la base de datos";
 } else{
     echo "si te conectaste";
 }
-$sql="SELECT * FROM tarea";
+$sql="SELECT * FROM tarea ";
 $resultado = $conexion->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){

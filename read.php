@@ -1,3 +1,4 @@
+
 <?php
     $servidor="localhost";
     $usuario="root";
@@ -11,7 +12,7 @@
     else{
         echo "si te conectaste ". "<br>";
     }
-$id=$_GET['id'];
+$id=$_POST["id"];
 $sql="SELECT * FROM tarea WHERE id='$id'";
 $resultado = $conn->query($sql);
 if ($resultado->num_rows>0){
