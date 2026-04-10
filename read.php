@@ -12,7 +12,7 @@
         echo "si te conectaste ". "<br>";
     }
 $id=$_GET['id'];
-$sql="SELECT * FROM personas WHERE id='$id'";
+$sql="SELECT * FROM tareas WHERE id='$id'";
 $resultado = $conexion->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){

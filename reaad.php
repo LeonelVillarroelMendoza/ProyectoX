@@ -11,13 +11,13 @@
     else{
         echo "si te conectaste ". "<br>";
     }
-$sql="SELECT * FROM personas";
+$sql="SELECT * FROM tareas";
 $resultado = $conexion->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){
 echo $fila['id']."<br>".$fila['nombre']."<br>".$fila['descripcion']."<br>".$fila['estado']."<br>";
 $id=$fila['id'];
-echo "<a href='persona.php?id=$id'><button >Mostrar</button></a><br>";
+echo "<a href='form.php?id=$id'><button >Mostrar</button></a><br>";
 }
 }
-?>
+?>                                          
