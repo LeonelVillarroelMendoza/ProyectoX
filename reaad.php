@@ -1,23 +1,22 @@
 <?php
-    $servidor="localhost";
-    $usuario="root";
-    $contraseña="";
-    $nombreBD="TaskFlow";
+$direccion="localhost";
+$usuario="root";
+$contraseña="";
+$nombreBase="TaskFlow";
 
-    $conn= new mysqli($servidor,$usuario,$contraseña,$nombreBD);
-    if($conn -> connect_error){
-        echo "no te conectaste ";
-    }
-    else{
-        echo "si te conectaste ". "<br>";
-    }
-$sql="SELECT * FROM personas";
+$conexion= new mysqli($direccion,$usuario,$contraseña,$nombreBase);
+if($conexion->error){
+echo "Hubo un error al conectar a la base de datos";
+} else{
+    echo "si te conectaste";
+}
+$sql="SELECT * FROM tarea ";
 $resultado = $conexion->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){
 echo $fila['id']."<br>".$fila['nombre']."<br>".$fila['descripcion']."<br>".$fila['estado']."<br>";
 $id=$fila['id'];
-echo "<a href='persona.php?id=$id'><button >Mostrar</button></a><br>";
+echo "<a href='form.php?id=$id'><button>Mostrar</button></a><br>";
 }
 }
-?>
+?>                                          
