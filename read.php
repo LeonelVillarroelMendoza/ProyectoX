@@ -12,8 +12,8 @@
         echo "si te conectaste ". "<br>";
     }
 $id=$_GET['id'];
-$sql="SELECT * FROM tareas WHERE id='$id'";
-$resultado = $conexion->query($sql);
+$sql="SELECT * FROM tarea WHERE id='$id'";
+$resultado = $conn->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){
 echo $fila['id']."<br>".$fila['nombre']."<br>".$fila['descripcion']."<br>".$fila['estado'];
