@@ -25,6 +25,8 @@
     </style>
     <center>
     <div>
+    <form method="post" action="Create.php">
+        <label for="">codigo</label><br>
     <form method="post" action="create.php">
         <label for="">Codigo</label><br>
         <input type="number" name="id"><br><br>
@@ -32,6 +34,7 @@
         <input type="text" name="nombre"><br>
         <label>Descripcion</label><br>
         <input type="text" name="descripcion"><br>
+        <label>Estado</label><br>
         <label>Estado de la tarea</label><br>
         <input type="text" name="estado"><br><br>
         <input id="submit" type="submit" value="Enviar"><br><br>

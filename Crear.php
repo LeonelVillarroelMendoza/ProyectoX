@@ -13,11 +13,12 @@
     $nombre = $_POST['nombre' ];
     $descripcion = $_POST['descripcion'];
     $estado = $_POST['estado' ];
-    $sql = "INSERT INTO produc (id, nombre, descripcion, estado) VALUES ('$id', '$nombre','$descripcion', '$estado')";
+
+    $sql = "INSERT INTO tarea (id, nombre, descripcion, estado) VALUES ('$id', '$nombre','$descripcion', '$estado')";
+    
     if($conn->query($sql)===TRUE){
-        echo"se registro correctamente"
+        echo "se registro correctamente";
+    } else{
+        echo $sql -> error;
     }
-    else{
-        echo sql->error;
-    }
-    ?>
+?>
