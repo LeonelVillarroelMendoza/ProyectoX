@@ -1,3 +1,27 @@
+<?php
+    $servidor="localhost";
+    $usuario="root";
+    $contraseña="";
+    $nombreBD="TaskFlow";
+
+    $conn= new mysqli($servidor,$usuario,$contraseña,$nombreBD);
+    if($conn -> connect_error){
+        echo "no te conectaste ";
+    }
+    $id=$_GET['id'];
+$sql="SELECT * FROM personas WHERE id='$id'";
+$resultado = $conexion->query($sql);
+if ($resultado->num_rows>0){
+while($fila=$resultado->fetch_assoc()){
+$code=$fila['code'];
+$nombre=$fila['nombre'];
+$descripcion=$fila['descripcion'];
+$estado=$fila['estado'];
+
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,13 +52,13 @@
     <div>                                       
     <form method="post" action="create.php">
         <label for="">Codigo</label><br>
-        <input type="number" name="id"><br>
+        <input type="number" name="code" value=<?=$code?>><br>
         <label>Nombre</label><br>
-        <input type="text" name="nombre"><br>
+        <input type="text" name="nombre" value=<?=$nombre?>><br>
         <label>Descripcion</label><br>
-        <input type="text" name="descripcion"><br>
+        <input type="text" name="descripcion" value=<?=$descripcion?>><br>
         <label>Estado</label><br>
-        <input type="text" name="estado"><br><br>
+        <input type="text" name="estado" value=<?=$estado?>><br><br>
         <input id="submit" type="submit" value="Enviar"><br><br>
         <input id="reset" type="reset" name="borrar" value="Borrar"><br><br>
     </form>
