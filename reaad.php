@@ -1,6 +1,6 @@
 <?php
 $direccion="localhost";
-$usuario-"root";
+$usuario="root";
 $contraseña="";
 $nombreBase="TaskFlow";
 
