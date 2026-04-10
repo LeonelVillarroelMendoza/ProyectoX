@@ -7,6 +7,8 @@ $nombreBase="TaskFlow";
 $conexion= new mysqli($direccion,$usuario,$contraseña,$nombreBase);
 if($conexion->error){
 echo "Hubo un error al conectar a la base de datos";
+} else{
+    echo "si te conectaste";
 }
 $sql="SELECT * FROM tarea";
 $resultado = $conexion->query($sql);
