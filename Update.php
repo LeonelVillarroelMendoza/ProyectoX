@@ -9,8 +9,8 @@
         echo "no te conectaste ";
     }
     $id=$_GET['id'];
-$sql="SELECT * FROM personas WHERE id='$id'";
-$resultado = $conexion->query($sql);
+$sql="SELECT * FROM tarea WHERE id='$id'";
+$resultado = $conn->query($sql);
 if ($resultado->num_rows>0){
 while($fila=$resultado->fetch_assoc()){
 $code=$fila['code'];
